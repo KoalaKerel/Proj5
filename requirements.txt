@@ -4,4 +4,4 @@ numpy
 openpyxl
 matplotlib
 datetime
-PIL
+Pillow
