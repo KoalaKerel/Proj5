@@ -16,12 +16,12 @@ sl.set_page_config(page_title="Planning", page_icon="📅")
 
 #Aangeven dat er data onbreekt
 if sl.session_state['noinput'] == True:
-    sl.markdown("Er is geen omloopplanning geupload. Ga terug naar de startpagina.")
+    sl.markdown("No schedule has been uploaded. Please return to the frontpage and upload a schedule.")
     noinputimg = Image.open('Geeninput.png')
     sl.image(noinputimg)
     
 if sl.session_state['mismatch'] == True and sl.session_state['noinput']==False:
-    sl.markdown("Er is een foute omloopplanning geupload. Ga terug naar de startpagina.")
+    sl.markdown("The uploaded schedule is not formatted correctly or does not match the uploaded data. Please check if both are correct.")
     badinputimg = Image.open('Fouteinput.png')
     sl.image(badinputimg)
     
@@ -55,7 +55,7 @@ if sl.session_state['mismatch'] == False and sl.session_state['noinput'] == Fals
     yticks = np.arange(1, aantalbus+1, 1)
     yticklabels = np.arange(1, aantalbus+1, 1)
     ax.set_yticks(yticks)
-    ax.set_ylabel("Bussen")
+    ax.set_ylabel("Busses")
     
     #De x-as wordt naar uren afgerond
     xticks = np.arange(np.floor(data.start_time.min()/60)*60, np.floor(data.end_time.max()/60)*60 + 60, 60)
@@ -69,7 +69,7 @@ if sl.session_state['mismatch'] == False and sl.session_state['noinput'] == Fals
     ax.set_xticklabels(xticklabels, rotation=45)
     
     #plot laten zien
-    sl.header("Overzicht van de gehele omloopplanning:")
+    sl.header("The entire schedule visualized:")
     sl.pyplot(fig)
     
     
@@ -84,7 +84,7 @@ if sl.session_state['mismatch'] == False and sl.session_state['noinput'] == Fals
         planningen.append(busp)
         
     #Plaatsen als colommen
-    sl.header("Planningen van individuele bussen:")
+    sl.header("Each bus' individual schedule:")
     a = 1
     for i in range(int((len(planningen))/2)):
         col1, col2 = sl.columns(2)

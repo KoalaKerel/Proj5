@@ -7,11 +7,12 @@ Created on Mon Dec  5 12:18:00 2022
 
 import streamlit as sl
 
+sl.set_page_config(page_title="Controle", page_icon="🔎")
 #Aangeven dat er data onbreekt
 if sl.session_state['noinput'] == True:
     sl.markdown("Er is geen omloopplanning geupload. Ga terug naar de startpagina.")
 
-sl.set_page_config(page_title="Controle", page_icon="🔎")
+
 
 sl.markdown("Op deze pagina kunt u controleren of de planning voldoet aan alle eisen.")
 
