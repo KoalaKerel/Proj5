@@ -24,7 +24,7 @@ planningdf = pd.DataFrame(columns=['buslijn']) #Om no input error te vermijden
 if 'noinput' not in sl.session_state: 
     sl.session_state['noinput'] = True #Hiermee weet het om aan te geven op andere paginas als er geen input is
 if 'mismatch' not in sl.session_state:
-    sl.session_state['mismatch'] = True 
+    sl.session_state['mismatch'] = False
 if 'wrongdata' not in sl.session_state:
     sl.session_state['wrongdata']= False
 if 'datainput' not in sl.session_state:
