@@ -80,7 +80,10 @@ if sl.session_state['mismatch'] == False and sl.session_state['noinput'] == Fals
         tempdienst = sum(tempdata.tte[tempdata.activiteit=="dienst rit"])
         diensts.append(tempdienst)
         
-        tempdd = tempuren/tempdienst #alle uren gedeeld door diensturen    
+        if tempdienst > 0:
+            tempdd = tempuren/tempdienst #alle uren gedeeld door diensturen    
+        else:
+            tempdd = 0
         dds.append(tempdd)
         
         tempusage = tempdist * 1.5
