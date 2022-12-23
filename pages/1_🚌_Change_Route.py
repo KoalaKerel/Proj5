@@ -22,6 +22,8 @@ if sl.session_state['mismatch'] == True and sl.session_state['noinput']==False:
 if sl.session_state['mismatch'] == False and sl.session_state['noinput'] == False:
     sl.markdown("Here you can find the which route is being analysed. By default this will be routes 400 and 401. You can change the routes by uploading the necessary data below.")
     
+    halt1 = False
+    halt2 = False
     new_upload = sl.file_uploader('')
     
     if new_upload is None:
