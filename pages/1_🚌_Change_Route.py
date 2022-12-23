@@ -64,7 +64,7 @@ if sl.session_state['mismatch'] == False and sl.session_state['noinput'] == Fals
                 halt2 = False
             sl.session_state['dienstdata'] = usedata
             sl.session_state['dienstregeling'] = usedienst
-    if halt1 = False and halt2 = False:
+    if halt1 == False and halt2 == False:
         activeroutes = usedata.buslijn.unique()
         activeroutes = activeroutes[~np.isnan(activeroutes)]
         
