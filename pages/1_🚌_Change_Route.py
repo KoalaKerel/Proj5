@@ -25,6 +25,7 @@ if sl.session_state['mismatch'] == False and sl.session_state['noinput'] == Fals
     halt1 = False
     halt2 = False
     new_upload = sl.file_uploader('', type=['xlsx'])
+    sl.header(new_upload)
     
     if new_upload is None:
         usedata = sl.session_state['dienstdata']
