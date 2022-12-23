@@ -117,7 +117,7 @@ if planning is not None and mismatch==False:
             data['end_time'][i] = data['end_time'][i] + 1440
         if data['buslijn'][i] not in lijnen:
             data['buslijn'][i] = ""
-if (planning is not None) and (sl.session_state('mismatch') == False):            
+if (planning is not None) and (sl.session_state['mismatch'] == False):            
     if(all(x in sl.session_state['dienstdata'].activiteit.unique() for x in sl.session_state['datainput'].type.unique() ))==False:
         sl.session_state['wrongdata'] = True
         sl.markdown("a")
