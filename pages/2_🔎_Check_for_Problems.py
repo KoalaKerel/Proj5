@@ -34,9 +34,6 @@ if sl.session_state['mismatch'] == False and sl.session_state['noinput'] == Fals
     from plancheck import *
     data = sl.session_state['datainput']
 
-    update.clear()
-    errors.clear()
-    assign.clear()
     sl.markdown("Op deze pagina kunt u controleren of de planning voldoet aan alle eisen.")
     if not assign():
         sl.write("De dienstregeling is niet volledig of dubbel ingepland")
