@@ -104,7 +104,15 @@ if sl.session_state['mismatch'] == False and sl.session_state['noinput'] == Fals
     avginp = {'Statistic': ['Average DD', 'Average distance (m)', 'Average percentage of time active', 'Average amount of time active', 'Average time with passengers', 'Average time spent idling', 'Average time spent charging'], 'Value':[ sum(dds)/len(dds), sum(dists)/len(dists), sum(percs)/len(percs), datetime.timedelta(minutes=sum(uren)/len(uren)), datetime.timedelta(minutes=sum(diensts)/len(diensts)), datetime.timedelta(minutes=sum(idles)/len(idles)), datetime.timedelta(minutes=sum(charges)/len(charges))]} 
     avgdf = pd.DataFrame(data=avginp)  
     sl.dataframe(avgdf) 
-     
+    
+    from plancheck import *
+    selected = sl.multiselect('select:',bussen[1:])
+    for i in selected:
+        sl.pyplot(i.plot())
+        plt.title('State of charge of busses over time')
+        plt.ylabel('State of charge(kWh)')
+        plt.xlabel('Time') 
+        
     #Plaatsen als colommen
     sl.header("Statistics of individual busses:")
     a = 1

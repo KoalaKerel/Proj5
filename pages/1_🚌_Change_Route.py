@@ -42,6 +42,7 @@ if sl.session_state['mismatch'] == False and sl.session_state['noinput'] == Fals
                 halt1 = True
             else:
                 halt1 = False
+                sl.session_state['dienstdata2'] = pd.ExcelFile(new_upload)
             
             dienstlijnen = usedata.buslijn.unique()
             dienstlijnen = dienstlijnen[~np.isnan(dienstlijnen)]
