@@ -33,7 +33,6 @@ if 'datainput' not in sl.session_state:
 sl.write("Please upload the excel file containing the bus schedule:")
 planning = sl.file_uploader('Schedule uploader', type=['xlsx'])
 #Hiermee weten de andere paginas dat er een upload is, het update ook alleen de data wanneer er iets upload dus geen reset.
-sl.header(planning)
 if planning is not None: 
     planningdf = pd.read_excel(planning)
     sl.session_state['datainput'] = planningdf
