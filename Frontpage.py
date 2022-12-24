@@ -18,7 +18,7 @@ sl.set_page_config(
 sl.write("Welcome to this tool for checking bus schedules. Below you will find a video instructing you on how to use this application.")
 
 
-sl.video('https://youtu.be/dQw4w9WgXcQ') #PLACEHOLDER VIDEO!
+sl.video('https://youtu.be/SVFKbhT3If8') #PLACEHOLDER VIDEO!
 
 planningdf = pd.DataFrame(columns=['buslijn']) #Om no input error te vermijden
 if 'noinput' not in sl.session_state: 
